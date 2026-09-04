@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vipulchartal-star.github.io/private-jet-wifi-guide/sitemap.xml
+Sitemap: https://osaka-research.github.io/private-jet-wifi-guide/sitemap.xml
