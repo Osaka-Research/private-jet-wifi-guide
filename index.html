@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Fix Private Jet Wi-Fi | Cabin Connectivity Guide</title>
+<meta name="description" content="Step-by-step guide to diagnosing dead cabin Wi-Fi on private jets: modem vs. access point, Gogo AVANCE, Honeywell JetWave, Viasat, and Starlink Aviation fault checklist.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vipulchartal-star.github.io/private-jet-wifi-guide/">
+<meta name="theme-color" content="#EDEFE7">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Fix Private Jet Wi-Fi">
+<meta property="og:description" content="Cabin Wi-Fi troubleshooting checklist for private aircraft — modem, access point, and SATCOM/ATG fault diagnosis by system.">
+<meta property="og:url" content="https://vipulchartal-star.github.io/private-jet-wifi-guide/">
+<meta property="og:site_name" content="Cabin Systems Reference">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to Fix Private Jet Wi-Fi">
+<meta name="twitter:description" content="Cabin Wi-Fi troubleshooting checklist for private aircraft — modem, access point, and SATCOM/ATG fault diagnosis by system.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "How to Fix Private Jet Wi-Fi",
+  "description": "Step-by-step guide to diagnosing dead cabin Wi-Fi on private jets: modem vs. access point, Gogo AVANCE, Honeywell JetWave, Viasat, and Starlink Aviation fault checklist.",
+  "about": "Private aircraft cabin Wi-Fi and SATCOM/ATG connectivity troubleshooting",
+  "mainEntityOfPage": "https://vipulchartal-star.github.io/private-jet-wifi-guide/",
+  "author": { "@type": "Organization", "name": "Cabin Systems Reference" }
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+  :root{
+    --paper:#EDEFE7;
+    --panel:#FFFFFF;
+    --ink:#182129;
+    --ink-soft:#4B5761;
+    --line:#C4CABD;
+    --accent:#B96A2C;
+    --accent-ink:#7A4419;
+    --accent2:#33707F;
+    --accent2-soft:#E4EEEF;
+    --amber-bad:#B3401F;
+    --green-ok:#3F7A4B;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#10161C;
+      --panel:#161F27;
+      --ink:#DCE3E6;
+      --ink-soft:#94A2AA;
+      --line:#2B3841;
+      --accent:#E0A05C;
+      --accent-ink:#F2C48C;
+      --accent2:#6FB4C2;
+      --accent2-soft:#1B2C31;
+      --amber-bad:#E07B5C;
+      --green-ok:#7DBB86;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#10161C;
+    --panel:#161F27;
+    --ink:#DCE3E6;
+    --ink-soft:#94A2AA;
+    --line:#2B3841;
+    --accent:#E0A05C;
+    --accent-ink:#F2C48C;
+    --accent2:#6FB4C2;
+    --accent2-soft:#1B2C31;
+    --amber-bad:#E07B5C;
+    --green-ok:#7DBB86;
+  }
+
+  *{box-sizing:border-box;}
+  html{ background:var(--paper); }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height:1.65;
+    margin:0;
+  }
+  ::selection{background:var(--accent); color:var(--panel);}
+
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+    padding:3.2rem 1.5rem 5rem;
+  }
+
+  .placard{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:0.9rem;
+    margin-bottom:2.2rem;
+  }
+  .placard span:last-child{ color:var(--accent2); }
+
+  h1{
+    font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    letter-spacing:0.005em;
+    line-height:0.98;
+    text-wrap:balance;
+    margin:0 0 0.4rem;
+    color:var(--ink);
+  }
+  .dek{
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:34rem;
+    margin:0 0 2.6rem;
+    text-wrap:balance;
+  }
+
+  h2{
+    font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    font-weight:600;
+    font-size:1.7rem;
+    letter-spacing:0.01em;
+    color:var(--ink);
+    margin:3rem 0 0.9rem;
+    padding-bottom:0.5rem;
+    border-bottom:2px solid var(--accent);
+    display:inline-block;
+  }
+
+  p{ max-width:38rem; margin:0 0 1.1rem; }
+  strong{ color:var(--ink); }
+  code{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85em;
+    background:var(--accent2-soft);
+    color:var(--accent2);
+    padding:0.1em 0.35em;
+    border-radius:3px;
+  }
+
+  .lede-callout{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent2);
+    padding:1rem 1.2rem;
+    margin:0 0 2rem;
+    font-size:0.96rem;
+    color:var(--ink-soft);
+  }
+  .lede-callout strong{ color:var(--ink); }
+
+  .checklist{
+    list-style:none;
+    margin:0 0 2.6rem;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    border:1px solid var(--line);
+    background:var(--panel);
+  }
+  .checklist li{
+    display:grid;
+    grid-template-columns:2.6rem 1fr;
+    gap:0.9rem;
+    padding:0.85rem 1.1rem;
+    border-bottom:1px solid var(--line);
+  }
+  .checklist li:last-child{ border-bottom:none; }
+  .checklist .num{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--accent);
+    padding-top:0.1rem;
+  }
+  .checklist .step strong{ display:block; font-size:0.98rem; margin-bottom:0.15rem; }
+  .checklist .step span{ color:var(--ink-soft); font-size:0.92rem; }
+
+  .table-wrap{ overflow-x:auto; margin:0 0 2.6rem; border:1px solid var(--line); }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.88rem;
+    min-width:640px;
+    background:var(--panel);
+  }
+  thead th{
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase;
+    font-size:0.68rem;
+    letter-spacing:0.07em;
+    color:var(--ink-soft);
+    text-align:left;
+    padding:0.7rem 0.9rem;
+    border-bottom:1px solid var(--line);
+    background:var(--accent2-soft);
+  }
+  tbody td{
+    padding:0.75rem 0.9rem;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{ border-bottom:none; }
+  td.sys{ font-weight:600; color:var(--ink); white-space:nowrap; }
+  td.band{ font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--accent2); white-space:nowrap; }
+
+  .status-dot{
+    display:inline-block;
+    width:0.55em; height:0.55em;
+    border-radius:50%;
+    margin-right:0.4em;
+  }
+  .status-dot.bad{ background:var(--amber-bad); }
+  .status-dot.ok{ background:var(--green-ok); }
+
+  .warn{
+    background:var(--accent2-soft);
+    border:1px solid var(--line);
+    padding:1rem 1.2rem;
+    margin:0 0 2rem;
+    font-size:0.93rem;
+  }
+  .warn strong{ color:var(--accent-ink); }
+
+  ul.plain{ padding-left:1.2rem; max-width:38rem; }
+  ul.plain li{ margin-bottom:0.5rem; }
+
+  .hire{
+    margin-top:3rem;
+    padding:1.3rem 1.4rem;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+  }
+  .hire-label{
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    color:var(--accent);
+    margin-bottom:0.5rem;
+  }
+  .hire-copy{ font-size:0.94rem; color:var(--ink-soft); margin-bottom:1rem; max-width:34rem; }
+  .hire-actions{ display:flex; flex-wrap:wrap; gap:0.7rem; }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    padding:0.6rem 0.95rem;
+    border:1px solid var(--line);
+    color:var(--ink);
+    background:var(--paper);
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover, .btn:focus-visible{ border-color:var(--accent2); color:var(--accent2); outline:none; }
+  .btn:focus-visible{ box-shadow:0 0 0 2px var(--accent2-soft); }
+
+  footer{
+    margin-top:3.5rem;
+    padding-top:1.2rem;
+    border-top:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:520px){
+    .checklist li{ grid-template-columns:2rem 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="placard">
+    <span>ATA 23 — COMMUNICATIONS</span>
+    <span>CABIN SYSTEMS NOTE 07</span>
+  </div>
+
+  <h1>How to Fix Private&nbsp;Jet Wi-Fi</h1>
+  <p class="dek">"No internet" in a cabin almost never means one broken thing. It means one of three separate boxes — the modem, the access point, or the sky — stopped talking. Find which one before you touch anything.</p>
+
+  <div class="lede-callout">
+    <strong>The distinction that matters:</strong> cabin Wi-Fi is a local wireless LAN broadcast by an access point in the cabin management system (CMS). It has nothing to do with connectivity by itself — that comes from a separate modem (ATG or SATCOM) that hands the AP its uplink. You can have a perfect, strong SSID signal with zero data behind it, and the fix for each failure is different.
+  </div>
+
+  <h2>Know your install</h2>
+  <p>Before troubleshooting, confirm which system is on the tail — it's usually placarded near the CMS panel or in the aircraft flight manual supplement (AFMS):</p>
+  <ul class="plain">
+    <li><strong>Gogo AVANCE L5 / LX</strong> — air-to-ground (ATG), CONUS-only, hands off between ground towers as you fly. Drops near borders and over open water.</li>
+    <li><strong>Honeywell JetWave</strong> (Inmarsat GX Aviation) — Ka-band SATCOM, global coverage, needs a clear antenna view of the satellite through the tail or belly radome.</li>
+    <li><strong>Viasat Ka-band</strong> — regional beams; performance falls off hard near a beam's edge and in heavy precipitation (rain fade).</li>
+    <li><strong>Starlink Aviation</strong> — LEO Ku/Ka, newest install base, most squawks so far trace to terminal firmware, not the link itself.</li>
+  </ul>
+
+  <h2>Quick-fix checklist</h2>
+  <ol class="checklist">
+    <li><span class="num">01</span><span class="step"><strong>Power-cycle the cabin AP, not the modem.</strong><span>Most "no Wi-Fi" calls are a hung access point. Reset it first — usually a recessed button on the CMS rack or a breaker labeled CAB WLAN.</span></span></li>
+    <li><span class="num">02</span><span class="step"><strong>Read the modem's link light.</strong><span>Green/steady = synced to network. Amber blinking = acquiring. Red = no sync — this is a connectivity fault, not a Wi-Fi fault, and rebooting the AP won't fix it.</span></span></li>
+    <li><span class="num">03</span><span class="step"><strong>Check the sky, not the router.</strong><span>SATCOM loses lock in a steep bank away from the satellite, under heavy icing, or with a de-ice fluid film over the radome. ATG loses signal past the coastline or over mountainous terrain shadowing the nearest tower.</span></span></li>
+    <li><span class="num">04</span><span class="step"><strong>Rejoin the correct SSID.</strong><span>Cabin devices sometimes latch onto the crew/ops network by habit, which is bandwidth-capped or firewalled separately from the passenger SSID.</span></span></li>
+    <li><span class="num">05</span><span class="step"><strong>Check the account, not the aircraft.</strong><span>Gogo and Satcom Direct plans lapse or throttle on data caps. A fully healthy system with an expired plan looks identical, from the cabin, to a broken one.</span></span></li>
+    <li><span class="num">06</span><span class="step"><strong>Pull and reset the CMS breaker once.</strong><span>One cycle, then stop. Repeated breaker resets on a persistent fault mask the real failure from maintenance and can trip a latching fault code.</span></span></li>
+    <li><span class="num">07</span><span class="step"><strong>Log the LRU and light color, then hand off.</strong><span>Antenna, radome, and modem-bay work is line-maintenance only. Note the part number off the unit's dataplate and the exact fault light state for the technician — it cuts diagnosis time in half.</span></span></li>
+  </ol>
+
+  <h2>By system: what usually breaks</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>System</th><th>Link type</th><th>Typical failure</th><th>First move</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="sys">Gogo AVANCE L5/LX</td>
+          <td class="band">ATG · EVDO/5G</td>
+          <td><span class="status-dot bad"></span>Tower handoff drop near CONUS edge</td>
+          <td>Wait one handoff cycle; confirm inside coverage map</td>
+        </tr>
+        <tr>
+          <td class="sys">Honeywell JetWave</td>
+          <td class="band">Ka-band SATCOM</td>
+          <td><span class="status-dot bad"></span>Antenna loses satellite lock in steep bank</td>
+          <td>Reboot MCU; confirm radome clear of ice/fluid</td>
+        </tr>
+        <tr>
+          <td class="sys">Viasat Ka-band</td>
+          <td class="band">Ka-band SATCOM</td>
+          <td><span class="status-dot bad"></span>Beam-edge fade, rain fade</td>
+          <td>Check beam coverage map; wait out cell</td>
+        </tr>
+        <tr>
+          <td class="sys">Starlink Aviation</td>
+          <td class="band">LEO Ku/Ka</td>
+          <td><span class="status-dot bad"></span>Terminal firmware stall</td>
+          <td>Power-cycle terminal; confirm STC firmware current</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>When to stop and call maintenance:</strong> a fault code that survives one breaker cycle, a modem that never syncs after AP and CB resets, or any sign of physical antenna/radome damage. Open a squawk against ATA Chapter 23 and let an avionics shop pull it — not the pilot, not the FA, not the passenger who's "pretty good with routers."
+  </div>
+
+  <h2>Keep it from happening again</h2>
+  <ul class="plain">
+    <li>Have connectivity firmware updated at scheduled maintenance, not as an emergency AOG item mid-trip.</li>
+    <li>Confirm the data plan renewal date before a long trip, especially over a fleet change of hands.</li>
+    <li>Brief passengers on the current SSID and password each leg — CMS resets sometimes regenerate it.</li>
+    <li>Log recurring squawks by tail number. "Drops every flight past 30W" is a beam-coverage or antenna-alignment issue an avionics shop can actually fix — re-diagnosing it fresh every flight never does.</li>
+  </ul>
+
+  <div class="hire">
+    <div class="hire-label">Still stuck?</div>
+    <p class="hire-copy">If the checklist above didn't clear it, a connectivity technician can walk the fault live over chat — link light color, LRU part number, and tail number are enough to start.</p>
+    <div class="hire-actions">
+      <a class="btn btn-wapp" href="https://wa.me/919309555464" target="_blank" rel="noopener">WhatsApp · +91 93095 55464</a>
+      <a class="btn btn-tg" href="https://t.me/+919309555464" target="_blank" rel="noopener">Telegram · +91 93095 55464</a>
+    </div>
+  </div>
+
+  <footer>Cabin Systems Reference — for flight crew &amp; MRO use</footer>
+
+</div>
+</body>
+</html>
