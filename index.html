@@ -213,6 +213,9 @@
   .checklist .step strong{ display:block; font-size:0.98rem; margin-bottom:0.15rem; }
   .checklist .step span{ color:var(--ink-soft); font-size:0.92rem; }
 
+  .diagram-wrap{ overflow-x:auto; margin:0 0 2.6rem; }
+  .diagram-wrap svg{ display:block; width:100%; min-width:640px; height:auto; }
+
   .table-wrap{ overflow-x:auto; margin:0 0 2.6rem; border:1px solid var(--line); }
   table{
     width:100%;
@@ -323,6 +326,54 @@
 
   <div class="lede-callout">
     <strong>The distinction that matters:</strong> cabin Wi-Fi is a local wireless LAN broadcast by an access point in the cabin management system (CMS). It has nothing to do with connectivity by itself — that comes from a separate modem (ATG or SATCOM) that hands the AP its uplink. You can have a perfect, strong SSID signal with zero data behind it, and the fix for each failure is different.
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 920 210" role="img" aria-labelledby="pathTitle pathDesc">
+      <title id="pathTitle">Cabin connectivity signal path</title>
+      <desc id="pathDesc">Signal travels from satellite or ground tower, to the aircraft's modem, to the cabin access point, to a passenger device. The first two boxes are the connectivity side; the last two are the cabin Wi-Fi side.</desc>
+
+      <rect x="10" y="150" width="420" height="6" fill="var(--accent2)" opacity="0.55"/>
+      <text x="220" y="145" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.5" fill="var(--accent2)">CONNECTIVITY</text>
+
+      <rect x="490" y="150" width="420" height="6" fill="var(--accent)" opacity="0.55"/>
+      <text x="700" y="145" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.5" fill="var(--accent)">CABIN WI-FI</text>
+
+      <g font-family="Source Serif 4, Georgia, serif">
+        <rect x="10" y="20" width="180" height="70" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="100" y="50" text-anchor="middle" font-weight="600" font-size="15" fill="var(--ink)">Satellite / tower</text>
+        <text x="100" y="70" text-anchor="middle" font-size="12" fill="var(--ink-soft)">signal source</text>
+
+        <rect x="250" y="20" width="180" height="70" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="340" y="50" text-anchor="middle" font-weight="600" font-size="15" fill="var(--ink)">Modem (MCU)</text>
+        <text x="340" y="70" text-anchor="middle" font-size="12" fill="var(--ink-soft)">ATG or SATCOM LRU</text>
+
+        <rect x="490" y="20" width="180" height="70" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="580" y="50" text-anchor="middle" font-weight="600" font-size="15" fill="var(--ink)">Cabin access point</text>
+        <text x="580" y="70" text-anchor="middle" font-size="12" fill="var(--ink-soft)">CMS Wi-Fi radio</text>
+
+        <rect x="730" y="20" width="180" height="70" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+        <text x="820" y="50" text-anchor="middle" font-weight="600" font-size="15" fill="var(--ink)">Your device</text>
+        <text x="820" y="70" text-anchor="middle" font-size="12" fill="var(--ink-soft)">phone, laptop, tablet</text>
+      </g>
+
+      <g stroke="var(--ink-soft)" stroke-width="1.5" fill="none">
+        <path d="M190,55 H244"/>
+        <path d="M244,55 L234,50 M244,55 L234,60" fill="var(--ink-soft)"/>
+        <path d="M430,55 H484"/>
+        <path d="M484,55 L474,50 M484,55 L474,60" fill="var(--ink-soft)"/>
+        <path d="M670,55 H724"/>
+        <path d="M724,55 L714,50 M724,55 L714,60" fill="var(--ink-soft)"/>
+      </g>
+      <g font-family="JetBrains Mono, monospace" font-size="10.5" fill="var(--ink-soft)" text-anchor="middle">
+        <text x="217" y="42">RF link</text>
+        <text x="457" y="42">LAN handoff</text>
+        <text x="697" y="42">802.11 Wi-Fi</text>
+      </g>
+
+      <text x="220" y="190" text-anchor="middle" font-family="Source Serif 4, Georgia, serif" font-size="12.5" fill="var(--ink-soft)">Steps 02, 03, 05, 06, 07 live here</text>
+      <text x="700" y="190" text-anchor="middle" font-family="Source Serif 4, Georgia, serif" font-size="12.5" fill="var(--ink-soft)">Steps 01 and 04 live here</text>
+    </svg>
   </div>
 
   <h2>Know your install</h2>
